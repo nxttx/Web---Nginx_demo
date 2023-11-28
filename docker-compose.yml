@@ -1,0 +1,21 @@
+# invoke the dockerfile to build the image
+version: '3.8'
+
+services:
+  express:
+    build: /Express
+    ports:
+      - "81:80"
+    restart: always
+
+  flask:
+    build: /Flask
+    ports:
+      - "82:80"
+    restart: always
+
+  load_test:
+    build: /LoadTest
+    ports:
+      - "8080:8080"
+    restart: always

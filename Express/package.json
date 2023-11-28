@@ -8,7 +8,6 @@
   "type": "module",
   "dependencies": {
     "express": "~4.16.1",
-    "nodemon": "^2.0.22",
-    "pg": "^8.11.0"
+    "nodemon": "^2.0.22"
   }
 }
