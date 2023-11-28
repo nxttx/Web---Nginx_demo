@@ -1,5 +1,5 @@
 # Nginx demo
-Het doel van deze demo is om een nginx server op te zetten met een loadbalancer en een reverse proxy. De loadbalancer zal de requests verdelen over de twee verschillende web servers. De gehele omgeving zal in een docker container draaien.
+Het doel van deze demo is om een nginx server op te zetten met een loadbalancer en een reverse proxy. De loadbalancer zal de requests verdelen over de twee verschillende web servers. De gehele omgeving zal in verschillende docker containers draaien.
 
 ## Uiteindelijke architectuur
 ```plantuml
