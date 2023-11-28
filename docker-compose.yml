@@ -2,20 +2,37 @@
 version: '3.8'
 
 services:
+  nginx:
+    build: /Nginx
+    ports:
+      - "80:80"
+    networks:
+      - my-network
+    # make sure we can alter the static files while the container is running
+    volumes:
+      - ./static:/usr/share/nginx/html
+    restart: always
+
   express:
     build: /Express
-    ports:
-      - "81:80"
+    networks:
+      - my-network
     restart: always
 
   flask:
     build: /Flask
-    ports:
-      - "82:80"
+    networks:
+      - my-network
     restart: always
 
   load_test:
     build: /LoadTest
     ports:
       - "8080:8080"
+    networks:
+      - my-network
     restart: always
+
+networks:
+  my-network:
+    driver: bridge
