@@ -3,6 +3,7 @@ import os
 # import threading for multi-threading
 import threading
 import urllib.request
+import time
 
 # create threadpool
 threadpool = []
@@ -20,6 +21,7 @@ def index():
     # reset the amount of requests
     amount1 = 0
     amount2 = 0
+    current_time_in_ms = int(round(time.time() * 1000))
 
     for i in range(1000):
         # create a thread
@@ -32,7 +34,8 @@ def index():
     for thread in threadpool:
         thread.join()
     # return the result
-    return "Amount of requests to server 1: " + str(amount1) + "<br>Amount of requests to server 2: " + str(amount2)
+    time_requests_took = int(round(time.time() * 1000)) - current_time_in_ms
+    return "Amount of requests to server 1: " + str(amount1) + "<br>Amount of requests to server 2: " + str(amount2) + "<br>Time requests took: " + str(time_requests_took) + "ms"
 
 
 def check():
