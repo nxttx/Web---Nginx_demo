@@ -1,5 +1,6 @@
-import flask 
+import flask
 import os
+import datetime
 
 app = flask.Flask(__name__)
 
@@ -10,6 +11,10 @@ def index():
 @app.route('/check')
 def check():
     return "2"
+
+@app.route('/time')
+def time():
+    return str(datetime.datetime.now()) + " from python"
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 80))

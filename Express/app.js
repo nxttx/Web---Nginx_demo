@@ -20,6 +20,9 @@ app.get('/check', function(req, res, next) {
   res.send('1');
 });
 
+app.get('/time', function(req, res, next) {
+  res.send(new Date().toString() + ' From nodejs');
+});
 
 
 
